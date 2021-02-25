@@ -12,8 +12,10 @@
             font-family: 'Oxygen', sans-serif;
         }
         video {
-            width: 50px;
-            height: 50px;
+            width: 300px;
+        }
+        #my-video-chat-window{
+            display: flex;
         }
     </style>
 </head>

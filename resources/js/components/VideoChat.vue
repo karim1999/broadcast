@@ -41,9 +41,33 @@ export default {
         },
         connectToRoom : async function () {
 
-            const { connect, createLocalVideoTrack } = require('twilio-video');
+            const { connect, createLocalVideoTrack, isSupported } = require('twilio-video');
 
-            connect( this.accessToken, { name:'soccer' }).then(room => {
+            if (isSupported) {
+                // Set up your video app.
+            } else {
+                alert('This browser is not supported by twilio-video.js.');
+            }
+            connect( this.accessToken, {
+                name:'soccer',
+                audio: true,
+                video: { frameRate: 24, width: 300 },
+                bandwidthProfile: {
+                    video: {
+                        mode: 'grid',
+                        maxTracks: 10,
+                        renderDimensions: {
+                            high: {height:1080, width:1920},
+                            standard: {height:720, width:1280},
+                            low: {height:176, width:144}
+                        }
+                    }
+                },
+                maxAudioBitrate: 16000, //For music remove this line
+                //For multiparty rooms (participants>=3) uncomment the line below
+                preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
+                networkQuality: {local:1, remote: 1}
+            }).then(room => {
 
                 console.log(`Successfully joined a Room: ${room}`);
 

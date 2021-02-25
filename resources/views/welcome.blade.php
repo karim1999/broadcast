@@ -11,9 +11,6 @@
         * {
             font-family: 'Oxygen', sans-serif;
         }
-        #my-video-chat-window{
-            display: flex;
-        }
     </style>
 </head>
 <body>
