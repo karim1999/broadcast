@@ -43,7 +43,7 @@ export default {
 
             const { connect, createLocalVideoTrack } = require('twilio-video');
 
-            connect( this.accessToken, { name:'cool room' }).then(room => {
+            connect( this.accessToken, { name:'soccer' }).then(room => {
 
                 console.log(`Successfully joined a Room: ${room}`);
 
@@ -57,7 +57,7 @@ export default {
 
                 if(this.admin){
                     room.participants.forEach(participant => {
-                        console.log('Participant "%s" disconnected', participant.identity);
+                        console.log('Participant "%s"', participant.sid);
                         if(this.admin){
                             this.participantListeners(participant, videoChatWindow)
                         }
@@ -68,11 +68,11 @@ export default {
                     // });
 
                     room.on('participantDisconnected', participant => {
-                        console.log('Participant "%s" disconnected', participant.identity);
+                        console.log('Participant "%s" disconnected', participant.sid);
                         this.removeVideo(participant)
                     })
                     room.on('participantConnected', participant => {
-                        console.log(`Participant "${participant.identity}" connected`);
+                        console.log(`Participant "${participant.sid}" connected`);
 
                         this.participantListeners(participant, videoChatWindow)
                     });
@@ -82,32 +82,34 @@ export default {
             });
         },
         participantListeners(participant, videoChatWindow){
+            const div = document.createElement('div');
+            div.id = participant.sid;
             participant.tracks.forEach(publication => {
                 if (publication.isSubscribed) {
                     const track = publication.track;
-                    this.appendVideo(participant.identity, videoChatWindow, track.attach())
+                    this.appendVideo(div, videoChatWindow, track.attach())
                     // videoChatWindow.appendChild(track.attach());
                 }
             });
 
             participant.on('trackSubscribed', track => {
-                this.appendVideo(participant.identity, videoChatWindow, track.attach())
+                this.appendVideo(div, videoChatWindow, track.attach())
                 // videoChatWindow.appendChild(track.attach());
             });
             participant.on('trackRemoved', (track)=>{
                 track.detach().forEach( function(element) { element.remove() });
             })
         },
-        appendVideo(id, videoChatWindow, video){
-            const div = document.createElement('div');
-            div.id = id;
+        appendVideo(div, videoChatWindow, video){
             // div.innerText = participant.identity;
             videoChatWindow.appendChild(div)
             div.appendChild(video)
         },
         removeVideo(participant){
+            console.log("removing...", participant.sid)
             if(document.getElementById(participant.sid)){
                 document.getElementById(participant.sid).remove();
+                console.log("done removing")
             }
             // participant.tracks.forEach((track)=>{
             //     track.detach().forEach( function(element) { element.remove() });
