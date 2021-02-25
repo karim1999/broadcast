@@ -109,9 +109,9 @@ export default {
             if(document.getElementById(participant.sid)){
                 document.getElementById(participant.sid).remove();
             }
-            participant.tracks.forEach((track)=>{
-                track.detach().forEach( function(element) { element.remove() });
-            });
+            // participant.tracks.forEach((track)=>{
+            //     track.detach().forEach( function(element) { element.remove() });
+            // });
         }
     },
     mounted : function () {
