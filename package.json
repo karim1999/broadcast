@@ -34,6 +34,7 @@
         "laravel-echo": "^1.10.0",
         "pusher-js": "^7.0.3",
         "simple-peer": "^9.9.3",
-        "twilio-video": "2.0.0"
+        "twilio-video": "2.0.0",
+        "vue-loading-overlay": "^3.4.2"
     }
 }

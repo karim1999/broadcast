@@ -1,5 +1,7 @@
 <template>
     <div class="flex flex-row items-center justify-between">
+        <loading :active.sync="isLoading"
+                 :can-cancel="false"></loading>
         <button @click="startFaceApi()" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150 ml-3">
             Start
         </button>
@@ -17,6 +19,10 @@
 <script>
 import Peer from "simple-peer";
 import { getPermissions } from "./../videoAccess";
+// Import component
+import Loading from 'vue-loading-overlay';
+// Import stylesheet
+import 'vue-loading-overlay/dist/vue-loading.css';
 
     export default {
         props: {
@@ -27,6 +33,7 @@ import { getPermissions } from "./../videoAccess";
         },
         data: function (){
             return {
+                isLoading: false,
                 channel: null,
                 myPeerData: null,
                 currentPeer: null,
@@ -41,6 +48,9 @@ import { getPermissions } from "./../videoAccess";
                 //     ]
                 // },
             }
+        },
+        components: {
+            Loading
         },
         async mounted() {
             console.log(this.user)
@@ -72,7 +82,8 @@ import { getPermissions } from "./../videoAccess";
         },
         methods: {
             async startFaceApi(){
-                Promise.all([
+                this.isLoading= true
+                await Promise.all([
                     faceapi.nets.tinyFaceDetector.loadFromUri('models'),
                     faceapi.nets.faceLandmark68Net.loadFromUri('models'),
                     faceapi.nets.faceRecognitionNet.loadFromUri('models'),
@@ -102,6 +113,10 @@ import { getPermissions } from "./../videoAccess";
                             }
                         }, 1000)
                     })
+                }).catch(err => {
+                    console.log(err)
+                }).finally(res => {
+                    this.isLoading= false
                 })
             },
             async startRecording(){
