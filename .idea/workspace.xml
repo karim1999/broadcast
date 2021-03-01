@@ -267,7 +267,7 @@
       <workItem from="1614339349209" duration="11609000" />
       <workItem from="1614392327254" duration="7738000" />
       <workItem from="1614540875126" duration="19000" />
-      <workItem from="1614567144280" duration="22357000" />
+      <workItem from="1614567144280" duration="22678000" />
     </task>
     <task id="LOCAL-00001" summary="deploy">
       <created>1614275619857</created>
@@ -311,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614285759566</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="latest version">
+      <created>1614630094197</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614630094197</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,17 +333,18 @@
     <MESSAGE value="removed detach" />
     <MESSAGE value="fixed" />
     <MESSAGE value="fixed all" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all" />
+    <MESSAGE value="latest version" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1614267002835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614285759002">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614630093193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614285759002" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614630093193" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -345,9 +353,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614285760923">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614630095646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614285760923" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614630095646" />
   </component>
 </project>
