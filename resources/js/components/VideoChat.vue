@@ -18,7 +18,30 @@ export default {
     },
     data: function () {
         return {
-            accessToken: ''
+            videoTrack: null,
+            accessToken: '',
+            room: null,
+            videoChatWindow: null,
+            videoSettings: {
+                name:'soccer',
+                audio: true,
+                video: { frameRate: 24, width: 300 },
+                bandwidthProfile: {
+                    video: {
+                        mode: 'grid',
+                        maxTracks: 10,
+                        renderDimensions: {
+                            high: {height:1080, width:1920},
+                            standard: {height:720, width:1280},
+                            low: {height:176, width:144}
+                        }
+                    }
+                },
+                maxAudioBitrate: 16000, //For music remove this line
+                //For multiparty rooms (participants>=3) uncomment the line below
+                preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
+                networkQuality: {local:1, remote: 1}
+            }
         }
     },
     methods : {
@@ -48,86 +71,32 @@ export default {
             } else {
                 alert('This browser is not supported by twilio-video.js.');
             }
-            connect( this.accessToken, {
-                name:'soccer',
-                audio: true,
-                video: { frameRate: 24, width: 300 },
-                bandwidthProfile: {
-                    video: {
-                        mode: 'grid',
-                        maxTracks: 10,
-                        renderDimensions: {
-                            high: {height:1080, width:1920},
-                            standard: {height:720, width:1280},
-                            low: {height:176, width:144}
-                        }
-                    }
-                },
-                maxAudioBitrate: 16000, //For music remove this line
-                //For multiparty rooms (participants>=3) uncomment the line below
-                preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
-                networkQuality: {local:1, remote: 1}
-            }).then(room => {
+            connect( this.accessToken, this.videoSettings).then(room => {
+                this.room= room;
 
                 console.log(`Successfully joined a Room: ${room}`);
 
-                const videoChatWindow = document.getElementById('my-video-chat-window');
+                room.participants.forEach(this.participantConnected);
+                room.on('participantConnected', this.participantConnected);
+
+                room.on('participantDisconnected', this.participantDisconnected);
+                room.once('disconnected', error => room.participants.forEach(this.participantDisconnected));
 
                 if(!this.admin){
                     createLocalVideoTrack().then(track => {
-                        videoChatWindow.appendChild(track.attach());
-                    });
-                }
-
-                if(this.admin){
-                    room.participants.forEach(participant => {
-                        console.log('Participant "%s"', participant.sid);
-                        if(this.admin){
-                            this.participantListeners(participant, videoChatWindow)
-                        }
-                    });
-
-                    // room.on('participantConnected', participant => {
-                    //     console.log(`A remote Participant connected: ${participant}`);
-                    // });
-
-                    room.on('participantDisconnected', participant => {
-                        console.log('Participant "%s" disconnected', participant.sid);
-                        this.removeVideo(participant)
-                    })
-                    room.on('participantConnected', participant => {
-                        console.log(`Participant "${participant.sid}" connected`);
-
-                        this.participantListeners(participant, videoChatWindow)
+                        this.videoChatWindow.appendChild(track.attach());
+                        this.videoTrack= track;
                     });
                 }
             }, error => {
                 console.error(`Unable to connect to Room: ${error.message}`);
             });
         },
-        participantListeners(participant, videoChatWindow){
-            const div = document.createElement('div');
-            div.id = participant.sid;
-            participant.tracks.forEach(publication => {
-                if (publication.isSubscribed) {
-                    const track = publication.track;
-                    this.appendVideo(div, videoChatWindow, track.attach())
-                    // videoChatWindow.appendChild(track.attach());
-                }
-            });
-
-            participant.on('trackSubscribed', track => {
-                this.appendVideo(div, videoChatWindow, track.attach())
-                // videoChatWindow.appendChild(track.attach());
-            });
-            participant.on('trackRemoved', (track)=>{
-                track.detach().forEach( function(element) { element.remove() });
-            })
-        },
-        appendVideo(div, videoChatWindow, video){
-            // div.innerText = participant.identity;
-            videoChatWindow.appendChild(div)
-            div.appendChild(video)
+        appendVideo(div, video){
+            if(this.admin){
+                this.videoChatWindow.appendChild(div)
+                div.appendChild(video)
+            }
         },
         removeVideo(participant){
             console.log("removing...", participant.sid)
@@ -135,15 +104,51 @@ export default {
                 document.getElementById(participant.sid).remove();
                 console.log("done removing")
             }
-            // participant.tracks.forEach((track)=>{
-            //     track.detach().forEach( function(element) { element.remove() });
-            // });
+        },
+        participantConnected(participant) {
+            const div = document.createElement('div');
+            div.id = participant.sid;
+            participant.tracks.forEach(publication => {
+                if (publication.isSubscribed) {
+                    const track = publication.track;
+                    this.appendVideo(div, track.attach())
+                }
+            });
+
+            participant.on('trackSubscribed', track => {
+                console.log("trackSubscribed", track)
+                this.appendVideo(div, track.attach())
+            });
+
+            participant.on('trackRemoved', (track)=>{
+                console.log("trackRemoved", track)
+                track.detach().forEach( function(element) { element.remove() });
+            })
+        },
+        participantDisconnected(participant) {
+            console.log('Participant "%s" disconnected', participant.sid);
+            if(this.admin){
+                this.removeVideo(participant)
+            }
+        },
+
+        unsubscribeRoom(){
+            if(this.videoTrack){
+                this.videoTrack.stop();
+            }
+            this.removeVideo(this.room.localParticipant)
+            this.room.disconnect()
         }
     },
     mounted : function () {
         console.log('Video chat room loading...')
-
+        this.videoChatWindow = document.getElementById('my-video-chat-window');
         this.getAccessToken()
+    },
+    beforeDestroy : function () {
+        console.log('Video chat room destroyed...')
+        this.unsubscribeRoom()
     }
+
 }
 </script>

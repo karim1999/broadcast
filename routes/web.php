@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/admin', function () {
+//    return view('admin');
+//});
+Route::middleware(['auth'])->group(function () {
+//    Route::get('/send', function () {
+//        \App\Events\SendMessage::dispatch("Hello");
+//        return "Sent";
+//    });
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/admin', function () {
+        return view('dashboard', ["is_admin" => true]);
+    });
+
 });
-Route::get('/admin', function () {
-    return view('admin');
-});
+
+require __DIR__ . '/auth.php';
