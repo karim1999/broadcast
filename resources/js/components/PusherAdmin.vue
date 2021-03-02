@@ -122,6 +122,12 @@ import { getPermissions } from "./../videoAccess";
 
                 peer.on("error", (err) => {
                     console.log(err);
+                    try {
+                        this.peers= this.peers.filter(p => p && p.user && p.user.socket_id !== user.socket_id)
+                        peer.destroy();
+                    }catch (e){
+                        console.log(e)
+                    }
                 });
 
                 peer.on("close", () => {
