@@ -40,13 +40,13 @@ import 'vue-loading-overlay/dist/vue-loading.css';
                 myStream: null,
                 isConnected: false,
                 isBlurred: false,
-                // peerConfig: {
-                //     iceServers: [
-                //         {
-                //             urls: ["stun:stun.l.google.com:19302"]
-                //         }
-                //     ]
-                // },
+                peerConfig: {
+                    iceServers: [
+                        {
+                            urls: ["stun:stun.l.google.com:19302"]
+                        }
+                    ]
+                },
             }
         },
         components: {
