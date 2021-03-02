@@ -43,7 +43,11 @@ import 'vue-loading-overlay/dist/vue-loading.css';
                 peerConfig: {
                     iceServers: [
                         {
-                            urls: ["stun:stun.l.google.com:19302"]
+                            "urls": [
+                                "turn:13.250.13.83:3478?transport=udp"
+                            ],
+                            "username": "YzYNCouZM1mhqhmseWk6",
+                            "credential": "YzYNCouZM1mhqhmseWk6"
                         }
                     ]
                 },
@@ -129,13 +133,7 @@ import 'vue-loading-overlay/dist/vue-loading.css';
                     initiator: true,
                     trickle: false,
                     stream,
-                    config: {
-                        iceServers: [
-                            {
-                                urls: ["stun:stun.l.google.com:19302"]
-                            },
-                        ],
-                    },
+                    config: this.peerConfig,
                 });
                 this.attachEventListeners(this.currentPeer)
             },
