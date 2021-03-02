@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06fe4c3d-64de-469b-afad-8e9aee772a3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/PusherAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PusherAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PusherTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PusherTest.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,7 @@
       <workItem from="1614392327254" duration="7738000" />
       <workItem from="1614540875126" duration="19000" />
       <workItem from="1614567144280" duration="26947000" />
-      <workItem from="1614646091204" duration="98000" />
+      <workItem from="1614646091204" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="deploy">
       <created>1614275619857</created>
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614634246771</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="turn">
+      <created>1614646229651</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614646229651</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,17 +303,18 @@
     <MESSAGE value="fixed all" />
     <MESSAGE value="latest version" />
     <MESSAGE value="loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="loading" />
+    <MESSAGE value="turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="turn" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1614267002835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614634246124">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614646228932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614634246124" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614646228932" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -317,9 +323,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614634247713">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614646230873">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614634247713" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614646230873" />
   </component>
 </project>
