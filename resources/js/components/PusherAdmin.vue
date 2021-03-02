@@ -86,7 +86,7 @@ import { getPermissions } from "./../videoAccess";
             },
             addPeer(user, peerData){
                 console.log("Adding...")
-                var peer = new Peer({config: this.peerConfig});
+                var peer = new Peer({trickle: false, config: this.peerConfig});
                 const newPeer= {
                     user,
                     peerData,
