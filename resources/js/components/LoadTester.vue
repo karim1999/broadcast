@@ -47,11 +47,11 @@ export default {
             isBlurred: false,
             peerConfig: {
                 iceServers: [{
-                    "urls": ["stun:stun.cloudgear.dev:5349"],
+                    "urls": ["turn:turn.cloudgear.dev:5349"],
                     "username": "guest",
                     "credential": "somepassword"
                 }, {
-                    "urls": ["stun:stun.cloudgear.dev:3478"],
+                    "urls": ["turn:turn.cloudgear.dev:3478"],
                     "username": "guest",
                     "credential": "somepassword"
                 }]
