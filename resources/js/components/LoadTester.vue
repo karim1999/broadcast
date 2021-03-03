@@ -36,7 +36,7 @@ export default {
     },
     data: function (){
         return {
-            peersNum: 8,
+            peersNum: 50,
             peers: [],
             isLoading: false,
             channel: null,
@@ -47,13 +47,21 @@ export default {
             isBlurred: false,
             peerConfig: {
                 iceServers: [{
-                    "urls": ["stun:157.175.82.47:3478"],
-                    "username": "test",
-                    "credential": "test123"
+                    "urls": ["stun:stun.cloudgear.dev:5349"],
+                    "username": "guest",
+                    "credential": "somepassword"
                 }, {
-                    "urls": ["turn:157.175.82.47:3478"],
-                    "username": "test",
-                    "credential": "test123"
+                    "urls": ["turn:turn.cloudgear.dev:5349"],
+                    "username": "guest",
+                    "credential": "somepassword"
+                }, {
+                    "urls": ["turn:turn.cloudgear.dev:3478"],
+                    "username": "guest",
+                    "credential": "somepassword"
+                }, {
+                    "urls": ["stun:stun.cloudgear.dev:3478"],
+                    "username": "guest",
+                    "credential": "somepassword"
                 }]
             },
         }
