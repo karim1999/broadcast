@@ -36,7 +36,7 @@ export default {
     },
     data: function (){
         return {
-            peersNum: 15,
+            peersNum: 20,
             peers: [],
             isLoading: false,
             channel: null,
