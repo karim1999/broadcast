@@ -36,7 +36,7 @@ export default {
     },
     data: function (){
         return {
-            peersNum: 7,
+            peersNum: 20,
             peers: [],
             isLoading: false,
             channel: null,
@@ -145,8 +145,9 @@ export default {
         },
         async startRecording(){
         },
-        createMultiplePeers(stream){
+        async createMultiplePeers(stream){
             for (var i=0; i < this.peersNum; i++){
+                await new Promise(resolve => setTimeout(resolve, 20000));
                 this.createPeer(stream, i);
             }
         },
