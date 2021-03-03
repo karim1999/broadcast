@@ -46,15 +46,7 @@ export default {
             isConnected: false,
             isBlurred: false,
             peerConfig: {
-                iceServers: [{
-                    "urls": ["turn:turn.157.175.82.47:5349"],
-                    "username": "karim",
-                    "credential": "12345"
-                }, {
-                    "urls": ["stun:stun.157.175.82.47:5349"],
-                    "username": "karim",
-                    "credential": "12345"
-                }]
+                iceServers: []
             },
         }
     },
