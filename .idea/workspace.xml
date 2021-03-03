@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06fe4c3d-64de-469b-afad-8e9aee772a3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +219,7 @@
       <workItem from="1614652074413" duration="43000" />
       <workItem from="1614727539837" duration="2080000" />
       <workItem from="1614758938679" duration="23228000" />
-      <workItem from="1614800041075" duration="2583000" />
-    </task>
-    <task id="LOCAL-00003" summary="prod">
-      <created>1614276876925</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1614276876925</updated>
+      <workItem from="1614800041075" duration="3216000" />
     </task>
     <task id="LOCAL-00004" summary="removed detach">
       <created>1614277332718</created>
@@ -565,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614803100604</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="video 1mb">
+      <created>1614804550849</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1614804550849</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +574,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="latest version" />
     <MESSAGE value="loading" />
     <MESSAGE value="full width" />
     <MESSAGE value="using laravel websockets" />
@@ -600,17 +598,18 @@
     <MESSAGE value="turn only" />
     <MESSAGE value="7" />
     <MESSAGE value="sleep 20 s" />
-    <option name="LAST_COMMIT_MESSAGE" value="sleep 20 s" />
+    <MESSAGE value="video 1mb" />
+    <option name="LAST_COMMIT_MESSAGE" value="video 1mb" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1614267002835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614803099914">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614804550352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614803099914" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614804550352" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -619,10 +618,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614803101746">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614804551976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614803101746" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614804551976" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614771836929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

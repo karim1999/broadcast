@@ -147,7 +147,7 @@ export default {
         },
         async createMultiplePeers(stream){
             for (var i=0; i < this.peersNum; i++){
-                await new Promise(resolve => setTimeout(resolve, 20000));
+                // await new Promise(resolve => setTimeout(resolve, 20000));
                 this.createPeer(stream, i);
             }
         },
