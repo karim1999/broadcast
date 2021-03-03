@@ -32,14 +32,6 @@ import { getPermissions } from "./../videoAccess";
                         "username": "guest",
                         "credential": "somepassword"
                     }, {
-                        "urls": ["turn:turn.cloudgear.dev:5349"],
-                        "username": "guest",
-                        "credential": "somepassword"
-                    }, {
-                        "urls": ["turn:turn.cloudgear.dev:3478"],
-                        "username": "guest",
-                        "credential": "somepassword"
-                    }, {
                         "urls": ["stun:stun.cloudgear.dev:3478"],
                         "username": "guest",
                         "credential": "somepassword"
