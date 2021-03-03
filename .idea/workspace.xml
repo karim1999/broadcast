@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06fe4c3d-64de-469b-afad-8e9aee772a3b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +220,7 @@
       <workItem from="1614646091204" duration="3711000" />
       <workItem from="1614652074413" duration="43000" />
       <workItem from="1614727539837" duration="2080000" />
-      <workItem from="1614758938679" duration="345000" />
+      <workItem from="1614758938679" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="deploy">
       <created>1614275619857</created>
@@ -352,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614729418837</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="pusher creds">
+      <created>1614759345803</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614759345803</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,17 +383,18 @@
     <MESSAGE value="full width" />
     <MESSAGE value="using laravel websockets" />
     <MESSAGE value="websockets" />
-    <option name="LAST_COMMIT_MESSAGE" value="websockets" />
+    <MESSAGE value="pusher creds" />
+    <option name="LAST_COMMIT_MESSAGE" value="pusher creds" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1614267002835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614729418331">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614759345159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614729418331" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614759345159" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -392,9 +403,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614729419784">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614759347273">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614729419784" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614759347273" />
   </component>
 </project>

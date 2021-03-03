@@ -37,11 +37,12 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-                'useTLS' => true,
+
+                'useTLS' => env('PUSHER_APP_USETLS'),
                 //Laravel Websockets
                 'host' => '127.0.0.1',
                 'port' => 6001,
-                'scheme' => 'https'
+                'scheme' => env('PUSHER_APP_SCHEME')
             ],
         ],
 
