@@ -45,6 +45,6 @@ window.Echo = new Echo({
     //Laravel Websockets
     wsHost: window.location.hostname,
     wsPort: 6001,
-    forceTLS: true,
+    forceTLS: false,
     disableStats: true,
 });
