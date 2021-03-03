@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06fe4c3d-64de-469b-afad-8e9aee772a3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/PusherAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PusherAdmin.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +221,7 @@
       <workItem from="1614652074413" duration="43000" />
       <workItem from="1614727539837" duration="2080000" />
       <workItem from="1614758938679" duration="23228000" />
-      <workItem from="1614800041075" duration="3216000" />
-    </task>
-    <task id="LOCAL-00004" summary="removed detach">
-      <created>1614277332718</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1614277332718</updated>
+      <workItem from="1614800041075" duration="3370000" />
     </task>
     <task id="LOCAL-00005" summary="fixed">
       <created>1614280843827</created>
@@ -564,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614804550849</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="video 1mb">
+      <created>1614805196272</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1614805196272</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,10 +608,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614804550352">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614805195047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614804550352" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614805195047" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -618,10 +620,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614804551976">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614805198065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614804551976" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614805198065" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614771836929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

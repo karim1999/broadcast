@@ -1,6 +1,6 @@
 <template>
     <div class="container flex flex-row content-start justify-around flex-wrap">
-        <div class="flex-1" v-for="peer in peers">
+        <div class="flex-1" style="min-width: 5%" v-for="peer in peers">
             <video
                 :id="'video_'+peer.user.socket_id"
                 muted
