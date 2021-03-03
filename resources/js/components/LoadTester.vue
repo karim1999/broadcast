@@ -36,6 +36,8 @@ export default {
     },
     data: function (){
         return {
+            peersNum: 50,
+            peers: [],
             isLoading: false,
             channel: null,
             myPeerData: null,
@@ -76,27 +78,37 @@ export default {
         this.channel.listen('.pusher:subscription_succeeded', ()=> {
             console.log(this.channel)
             console.log("Done")
-            this.channel.listen('.client-signal-'+Echo.socketId(), (data) => {
-                if(data.type === "answer"){
-                    console.log("signal from admin", data)
-                    this.currentPeer.signal(data);
-                }
-            })
+            for (var i=0; i < this.peersNum; i++){
+                this.listenToConfirm(i);
+            }
         });
         this.channel.listen('.client-ask-for-peers', (e) => {
-            console.log(e);
-            if(this.isConnected) {
-                return;
-            }
-            if(this.currentPeer){
-                this.sendPeer(this.myPeerData)
-            }else if(this.myStream){
-                this.createPeer(this.myStream)
-            }
+            this.peers.map(peer => {
+                if(peer.isConnected) {
+                    return;
+                }
+                if(peer.peer){
+                    this.sendPeer(peer.peerData)
+                }else if(this.myStream){
+                    this.createPeer(this.myStream)
+                }
+            })
         })
         this.startStreaming();
     },
     methods: {
+        listenToConfirm(id){
+            this.channel.listen('.client-signal-'+id, (data) => {
+                if(data.type === "answer"){
+                    console.log("signal from admin", data, id)
+                    let peer= this.getPeerById(id);
+                    if(peer){
+                        console.log("Connecting........")
+                        peer.peer.signal(data);
+                    }
+                }
+            })
+        },
         async startStreaming(){
             let canvas= this.$refs.myCanvas;
             var ctx = canvas.getContext('2d');
@@ -107,8 +119,8 @@ export default {
                 // We'll use the first onsize callback as an indication that video has started
                 // playing out.
                 let stream= canvas.captureStream();
-                this.stream= stream;
-                this.createPeer(stream);
+                this.myStream= stream;
+                this.createMultiplePeers(stream);
                 if (startTime) {
                     const elapsedTime = window.performance.now() - startTime;
                     console.log(`Setup time: ${elapsedTime.toFixed(3)}ms`);
@@ -133,26 +145,48 @@ export default {
         },
         async startRecording(){
         },
-        createPeer(stream){
-            this.currentPeer = new Peer({
+        createMultiplePeers(stream){
+            for (var i=0; i < this.peersNum; i++){
+                this.createPeer(stream, i);
+            }
+        },
+        getPeerById(id){
+            return this.peers.find(peer => peer.id === id)
+        },
+        setPeerById(id, name, value){
+            let peerData= this.getPeerById(id);
+            if(peerData){
+                peerData[name]= value;
+            }
+        },
+        createPeer(stream, i){
+            let currentPeer= new Peer({
                 initiator: true,
                 trickle: false,
                 stream,
                 config: this.peerConfig,
             });
-            this.attachEventListeners(this.currentPeer)
+            const peerObj= {
+                id: i,
+                socket_id: i,
+                peer: currentPeer,
+                peerData: null,
+                isConnected: false,
+            }
+            this.peers.push(peerObj)
+            this.attachEventListeners(currentPeer, i)
         },
-        attachEventListeners(currentPeer){
+        attachEventListeners(currentPeer, id){
             currentPeer.on("signal", (data) => {
                 console.log("peer signal");
                 console.log(data)
-                this.myPeerData= data
-                this.sendPeer(data)
+                this.setPeerById(id, "peerData", data)
+                this.sendPeer(data, id)
             });
 
             currentPeer.on("connect", () => {
                 console.log("peer connected");
-                this.isConnected= true;
+                this.setPeerById(id, "isConnected", true)
             });
 
             currentPeer.on("error", (err) => {
@@ -161,34 +195,19 @@ export default {
 
             currentPeer.on("close", () => {
                 console.log("call closed caller");
-                currentPeer.destroy();
-                this.currentPeer= null;
-                this.isConnected= false;
+                let peer= this.getPeerById(id)
+                if(peer){
+                    peer.peer.destroy();
+                    peer.isConnected= false;
+                    peer.peer= null
+                }
             });
             currentPeer.on("stream", (stream) => {
                 console.log("Streaming from peer......")
             });
         },
-        getMediaPermission() {
-            return getPermissions()
-                .then((stream) => {
-                    console.log({stream})
-                    this.myStream = stream;
-                    if (this.$refs.myVideo) {
-                        if ('srcObject' in this.$refs.myVideo) {
-                            this.$refs.myVideo.srcObject = stream
-                        } else {
-                            this.$refs.myVideo.src = window.URL.createObjectURL(stream)
-                        }
-                    }
-                    return stream;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        },
-        sendPeer(data){
-            this.sendMessage({type: "peer", user: {...this.user, socket_id: Echo.socketId()}, peer: data})
+        sendPeer(data, id){
+            this.sendMessage({type: "peer", user: {...this.user, id, socket_id: id}, peer: data})
         },
         sendMessage(data){
             console.log("Sending", data)
