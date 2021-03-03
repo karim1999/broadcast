@@ -11,7 +11,7 @@
             muted
             autoplay="autoplay" loop="loop"
         >
-            <source src="/video.mp4" type="video/mp4">
+            <source src="/video.mkv" type="video/mp4">
         </video>
         <canvas
             style="display: none;"
