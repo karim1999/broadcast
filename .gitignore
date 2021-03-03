@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/video.mp4
 /storage/*.key
 /vendor
 .env

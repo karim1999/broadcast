@@ -30,7 +30,8 @@
                     @isset ($is_admin)
                         <pusher-admin :user='@json(auth()->user())'></pusher-admin>
                     @else
-                        <pusher-test :user='@json(auth()->user())'></pusher-test>
+                        <load-tester :user='@json(auth()->user())'></load-tester>
+{{--                        <pusher-test :user='@json(auth()->user())'></pusher-test>--}}
                     @endif
                 </div>
             </div>
