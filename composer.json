@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.9",
         "laravel/tinker": "^2.5",
         "pusher/pusher-php-server": "^5.0",
-        "twilio/sdk": "^6.18"
+        "twilio/sdk": "^6.18",
+      "ext-curl": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

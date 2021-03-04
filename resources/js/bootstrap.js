@@ -43,8 +43,9 @@ window.Echo = new Echo({
     encrypted: true,
 
     //Laravel Websockets
-    wsHost: window.location.hostname,
+    wsHost: "cloudgear.dev",
     wsPort: 6001,
+    wssPort: 6001,
     forceTLS: true,
     disableStats: true,
 });
