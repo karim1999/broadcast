@@ -34,7 +34,7 @@ export const getPermissions = () => {
 
     return new Promise((resolve, reject) => {
         navigator.mediaDevices
-            .getUserMedia({ video: true, audio: false })
+            .getUserMedia({ video: {width: {exact: 320, max: 320}, height: {exact: 240, max: 240}, frameRate: { ideal: 10, max: 15 }, aspectRatio: {ideal: 1}}, audio: false })
             .then(stream => {
                 resolve(stream);
             })

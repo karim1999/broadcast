@@ -26,6 +26,8 @@ import Peer from "simple-peer";
 import Loading from 'vue-loading-overlay';
 // Import stylesheet
 import 'vue-loading-overlay/dist/vue-loading.css';
+import {getPermissions} from "../videoAccess";
+import adapter from 'webrtc-adapter';
 
 export default {
     props: {
@@ -109,39 +111,59 @@ export default {
                 }
             })
         },
-        async startStreaming(){
-            let canvas= this.$refs.myCanvas;
-            var ctx = canvas.getContext('2d');
-            let video= this.$refs.myVideo;
-            let startTime;
-            video.onresize = () => {
-                console.log(`Remote video size changed to ${video.videoWidth}x${video.videoHeight}`);
-                // We'll use the first onsize callback as an indication that video has started
-                // playing out.
-                let stream= canvas.captureStream();
-                this.myStream= stream;
-                this.createMultiplePeers(stream);
-                if (startTime) {
-                    const elapsedTime = window.performance.now() - startTime;
-                    console.log(`Setup time: ${elapsedTime.toFixed(3)}ms`);
-                    startTime = null;
-                }
-            };
-
-            video.addEventListener('loadedmetadata', function() {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-            });
-
-            video.addEventListener('play', function() {
-                var $this = this; //cache
-                (function loop() {
-                    if (!$this.paused && !$this.ended) {
-                        ctx.drawImage($this, 0, 0);
-                        setTimeout(loop, 1000 / 30); // drawing at 30fps
+        getMediaPermission() {
+            return getPermissions()
+                .then((stream) => {
+                    console.log({stream})
+                    this.myStream = stream;
+                    if (this.$refs.myVideo) {
+                        if ('srcObject' in this.$refs.myVideo) {
+                            this.$refs.myVideo.srcObject = stream
+                        } else {
+                            this.$refs.myVideo.src = window.URL.createObjectURL(stream)
+                        }
                     }
-                })();
-            }, 0);
+                    this.createMultiplePeers(stream);
+                    return stream;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        async startStreaming(){
+            await this.getMediaPermission()
+            // let canvas= this.$refs.myCanvas;
+            // var ctx = canvas.getContext('2d');
+            // let video= this.$refs.myVideo;
+            // let startTime;
+            // video.onresize = () => {
+            //     console.log(`Remote video size changed to ${video.videoWidth}x${video.videoHeight}`);
+            //     // We'll use the first onsize callback as an indication that video has started
+            //     // playing out.
+            //     let stream= canvas.captureStream();
+            //     this.myStream= stream;
+            //     this.createMultiplePeers(stream);
+            //     if (startTime) {
+            //         const elapsedTime = window.performance.now() - startTime;
+            //         console.log(`Setup time: ${elapsedTime.toFixed(3)}ms`);
+            //         startTime = null;
+            //     }
+            // };
+            //
+            // video.addEventListener('loadedmetadata', function() {
+            //     canvas.width = video.videoWidth;
+            //     canvas.height = video.videoHeight;
+            // });
+            //
+            // video.addEventListener('play', function() {
+            //     var $this = this; //cache
+            //     (function loop() {
+            //         if (!$this.paused && !$this.ended) {
+            //             ctx.drawImage($this, 0, 0);
+            //             setTimeout(loop, 1000 / 30); // drawing at 30fps
+            //         }
+            //     })();
+            // }, 0);
         },
         async startRecording(){
         },
