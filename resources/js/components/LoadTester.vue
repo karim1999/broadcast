@@ -11,7 +11,6 @@
             muted
             autoplay="autoplay" loop="loop"
         >
-            <source src="/video.mkv" type="video/mp4">
         </video>
         <canvas
             style="display: none;"
@@ -38,7 +37,7 @@ export default {
     },
     data: function (){
         return {
-            peersNum: 100,
+            peersNum: 10,
             peers: [],
             isLoading: false,
             channel: null,
