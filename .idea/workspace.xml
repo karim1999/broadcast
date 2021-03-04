@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06fe4c3d-64de-469b-afad-8e9aee772a3b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LoadTester.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +223,7 @@
       <workItem from="1614800041075" duration="4795000" />
       <workItem from="1614860951116" duration="5432000" />
       <workItem from="1614882228894" duration="631000" />
-      <workItem from="1614883218711" duration="6096000" />
-    </task>
-    <task id="LOCAL-00014" summary="turn">
-      <created>1614647411142</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1614647411142</updated>
+      <workItem from="1614883218711" duration="7333000" />
     </task>
     <task id="LOCAL-00015" summary="turn">
       <created>1614650015025</created>
@@ -569,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614888560917</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="6001">
+      <created>1614892446657</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1614892446657</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +578,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test" />
     <MESSAGE value="3" />
     <MESSAGE value="5" />
     <MESSAGE value="9" />
@@ -604,17 +602,18 @@
     <MESSAGE value="100 camera" />
     <MESSAGE value="tls" />
     <MESSAGE value="https" />
-    <option name="LAST_COMMIT_MESSAGE" value="https" />
+    <MESSAGE value="6001" />
+    <option name="LAST_COMMIT_MESSAGE" value="6001" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1614267002835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="770" y="399" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1614267002835" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614888559100">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1614892446043">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614888559100" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614892446043" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1614275061286">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -623,10 +622,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614275067899" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614888562649">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614892447447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614888562649" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614892447447" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614883369915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
