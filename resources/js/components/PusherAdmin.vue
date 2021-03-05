@@ -28,19 +28,11 @@ import { getPermissions } from "./../videoAccess";
                 peers: [],
                 peerConfig: {
                     iceServers: [{
-                        "urls": ["stun:stun.cloudgear.dev:5349"],
+                        "urls": ["turn:Coturn-Network-Load-Balancer-517f31ccd2be498a.elb.me-south-1.amazonaws.com:3478"],
                         "username": "guest",
                         "credential": "somepassword"
                     }, {
-                        "urls": ["turn:turn.cloudgear.dev:5349"],
-                        "username": "guest",
-                        "credential": "somepassword"
-                    }, {
-                        "urls": ["turn:turn.cloudgear.dev:3478"],
-                        "username": "guest",
-                        "credential": "somepassword"
-                    }, {
-                        "urls": ["stun:stun.cloudgear.dev:3478"],
+                        "urls": ["stun:Coturn-Network-Load-Balancer-517f31ccd2be498a.elb.me-south-1.amazonaws.com:3478"],
                         "username": "guest",
                         "credential": "somepassword"
                     }]
